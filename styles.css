@@ -1,0 +1,72 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body setup */
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full height of the viewport */
+}
+
+/* Container that holds the slides */
+.slider-container {
+    width: 50%;  /* Slider takes 50% of the page width */
+    position: relative; /* To position navigation buttons */
+    overflow: hidden;  /* Hides slides outside the container */
+    border: 2px solid #000; /* Optional: Border around the slider */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* The slide wrapper that contains all the slides */
+.slides {
+    display: flex;  /* Arrange slides in a row */
+    transition: transform 0.5s ease;  /* Smooth transition when changing slides */
+}
+
+/* Each individual slide */
+.slide {
+    min-width: 100%;  /* Makes each slide take the full width of the container */
+    flex-shrink: 0;   /* Prevents the slide from shrinking */
+}
+
+.slide img {
+    width: 100%;  /* Makes the image fill the slide */
+    height: auto; /* Maintain image aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners for images */
+}
+
+/* Navigation buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;  /* Make sure the buttons are above the images */
+    border-radius: 50%;  /* Make the buttons round */
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+/* Left navigation button */
+.prev {
+    left: 10px;
+}
+
+/* Right navigation button */
+.next {
+    right: 10px;
+}
